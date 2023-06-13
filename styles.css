@@ -1,0 +1,136 @@
+body {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    width: 100%;
+    padding-top: 8rem;
+    background-color: #38404B;
+    color: rgba(148, 173, 207);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+  color: inherit;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+  margin-bottom: 2rem;
+  font-size: 3rem;
+  color: aliceblue;
+}
+
+header {
+  z-index: 999;
+  position: sticky;
+  top: 0rem;
+  background: #38404B;
+  margin: auto;
+  width: 100%;
+  padding: 2rem;
+  max-width: 780px;
+  margin-bottom: 4rem;
+}
+
+.new-task-form {
+  position: relative;
+  width: 100%;
+  flex: 1 1 auto;
+}
+
+.new-task-input {
+  outline: none;
+  border: none;
+  width: 100%;
+  padding: 15px;
+  background: transparent;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 1px 1px 2px rgba(64, 74, 86, 0.3), -1px -1px 2px rgba(48, 54, 64, 0.5), inset -5px 5px 10px rgba(48, 54, 64, 0.2), inset 5px -5px 10px rgba(48, 54, 64, 0.2), inset -5px -5px 10px rgba(64, 74, 86, 0.9), inset 5px 5px 13px rgba(48, 54, 64, 0.9);
+}
+
+.new-task-submit {
+  position: absolute;
+  height: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  font-size: 2rem;
+  padding: 0 1rem;
+  cursor: pointer;
+  right: 0;
+}
+
+.tasks__list {
+  margin: auto;
+  width: 100%;
+  max-width: 780px;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.tasks__list h2 {
+  text-align: left;
+  margin-bottom: 2rem;
+  color: aliceblue;
+}
+#tasks {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+.task .content {
+  width: calc(100% - 10ch);
+  height: 100%;
+  text-overflow: ellipsis;
+}
+.task {
+  position: relative;
+  display: flex;
+  width: 100%;
+  padding: 15px;
+  box-shadow: 5px 5px 13px 0px rgba(48, 54, 64, 0.9), -5px -5px 10px 0px rgba(64, 74, 86, 0.9), 5px -5px 10px 0px rgba(48, 54, 64, 0.2), -5px 5px 10px 0px rgba(48, 54, 64, 0.2), -1px -1px 2px 0px rgba(48, 54, 64, 0.5) inset, 1px 1px 2px 0px rgba(64, 74, 86, 0.3) inset;
+  border-radius: 10px;
+}
+.task .actions {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  align-content: middle;
+  padding: 0 1rem;
+  display: flex;
+  gap: 1rem;
+}
+.actions .edit, .actions .delete {
+  background: transparent;
+  border: none;
+  opacity: .65;
+  cursor: pointer;
+  transition: 50ms;
+}
+.actions .edit:hover, .actions .delete:hover {
+  opacity: 1;
+  color: white;
+}
+.content .text {
+  width: 100%;
+  background: transparent;
+  border: none;
+  cursor: text;
+  outline: none;
+}
+.text:read-only {
+  cursor: default;
+}
